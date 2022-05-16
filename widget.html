@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>聊天小助理</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script>
+	var botmanWidget = {
+		frameEndpoint: 'chatFrame.html',
+		chatServer: 'Demo.php',
+		title: '聊天小助理',
+		introMessage: '你好，今天有什麼可以幫你的嗎??',
+		placeholderText: '輸入內容',
+		mainColor: '#F28240',
+		bubbleBackground: '#F28240',
+		desktopHeight: 800, //調整開啟高度
+		aboutLink: 'https://botman.io',
+		aboutText: 'BotMan WebSite',
+
+	};
+	</script>
+	<script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+	<script>
+		document.onclick=function(){ 
+		var obj = event.srcElement; 
+		if(obj.type == "button"){
+			if(obj.value == "關於機器人") 
+				document.getElementById("bodyFrame").src = "SubPage/AboutRobot.html";
+			if(obj.value == "熱量的介紹")
+				document.getElementById("bodyFrame").src = "SubPage/IntroduceCalorie.html";
+			if(obj.value == "我一天需要多少熱量？")
+				document.getElementById("bodyFrame").src = "SubPage/DailyCalorieNeed.html";
+
+		}			
+	}
+	</script>
+	</head>
+
+	<!-- 網頁內容 -->
+	
+	<body>
+	
+		<div id="Header">
+			<p>&#129302;我的熱量機器人&#129302;</p>	
+		</div>
+		<div id="Content">
+			<div id="Sidebar">
+				<input class="SidebarButton" type="button" value="關於機器人"/> 
+				<input class="SidebarButton" type="button" value="熱量的介紹"/> 
+				<input class="SidebarButton" type="button" value="我一天需要多少熱量？"/> 
+			</div>
+			<div id="body">
+				<iframe id="bodyFrame" scrolling="no" src="SubPage/AboutRobot.html"></iframe>
+			</div>
+		</div>
+		<div style='clear:both;'></div>
+		<div id="Footer">Footer 欄位</div>
+
+	</body>
+</html>

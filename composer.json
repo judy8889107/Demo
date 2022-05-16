@@ -1,0 +1,5 @@
+{
+    "require": {
+        "botman/driver-web": "^1.5"
+    }
+}

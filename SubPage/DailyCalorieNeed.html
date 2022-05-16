@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我一天需要多少熱量？</title>
+    <!-- 樣式 -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+        body{
+            padding: 20px;
+            font-family: 'Noto Sans TC', sans-serif;
+            height: 800px;
+        }
+        h1{
+            color: #b74242;
+            font-weight: bold;
+        }
+        p{
+            font-size: 16px;
+        }
+        table {
+            text-align: center;
+            font-size: 16px;
+            border-collapse: collapse;
+            width: 90%;
+            
+        }
+
+        td, th {
+            text-align: center;
+            border: 1px solid #dddddd;
+            padding: 10px;
+        }
+
+        tr:first-child th:first-child, td:first-child{
+            color: white;
+            background-color: #6ebcee;
+        }
+        tr:first-child th{
+            color: white;
+            background-color: #008bc7;
+        }
+        tr:hover {
+            transition-duration: 0.4s;
+	        background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>我一天需要多少熱量？</h1>
+    <hr>
+    <p>根據每日活動量及為了調整體重至健康體重，可計算每日建議攝取熱量<br><br></p>
+    <table>
+        <tr>
+          <th>每天活動量</th>
+          <th>體重過輕者所需熱量</th>
+          <th>體重正常者所需熱量</th>
+          <th>體重過重、肥胖者所需熱量</th>
+        </tr>
+        <tr>
+          <td>輕度工作</td>
+          <td>35大卡 X 目前體重（公斤）</td>
+          <td>30大卡 X 目前體重（公斤）</td>
+          <td>20~25大卡 X 目前體重（公斤）</td>
+        </tr>
+        <tr>
+          <td>中度工作</td>
+          <td>40大卡 X 目前體重（公斤）</td>
+          <td>35大卡 X 目前體重（公斤）</td>
+          <td>30大卡 X 目前體重（公斤）</td>
+        </tr>
+        <tr>
+          <td>重度工作</td>
+          <td>45大卡 X 目前體重（公斤）</td>
+          <td>40大卡 X 目前體重（公斤）</td>
+          <td>35大卡 X 目前體重（公斤）</td>
+        </tr>
+      </table>
+    
+
+    <br><br><hr>
+    <p>活動量表說明<br><br></p>
+
+    <table>
+        <tr>
+          <th>每天活動量</th>
+          <th>活動種類</th>
+        </tr>
+        <tr>
+          <td>輕度工作</td>
+          <td>大部分從事靜態或坐著的工作。
+            例如：家庭主婦、坐辦公室的上班族、售貨員等...</td>
+        </tr>
+        <tr>
+          <td>中度工作</td>
+          <td>從事機械操作、接待或家事等站立活動較多的工作。
+            例如：褓母、護士、服務生等...</td>
+        </tr>
+        <tr>
+          <td>重度工作</td>
+          <td>從事農耕、漁業、建築等的重度使用體力之工作。
+            例如：運動員、搬家工人等...</td>
+        </tr>
+      </table>
+
+      <br><br><hr>
+      <p>計算一日所需熱量<br><br></p>
+      <form action="">
+        性別:
+        <input type="text" name="firstname">
+        年齡:
+        <input type="text" name="lastname">
+        身高:
+        <input type="text" name="lastname">
+        體重:
+        <input type="text" name="lastname">
+        <input type="submit" value="提交">
+        </form>
+</body>
+</html>
+
