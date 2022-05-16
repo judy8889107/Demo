@@ -9,7 +9,7 @@
         body{
             padding: 20px;
             font-family: 'Noto Sans TC', sans-serif;
-            height: 800px;
+            height: 1000px;
         }
         h1{
             color: #b74242;
@@ -17,6 +17,14 @@
         }
         p{
             font-size: 16px;
+        }
+        .content{
+            font-weight: 300;
+        }
+        blockquote{
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 30px;
         }
         table {
             text-align: center;
@@ -44,78 +52,153 @@
             transition-duration: 0.4s;
 	        background-color: #ddd;
         }
+        form{
+            text-align: left;
+            font-size: 14px;
+            
+        }
+        select{
+            text-align: center;
+            border: 1px solid #ccc; 
+            border-radius: 3px;
+            outline: none;
+            height: 32px;
+            margin-top: 5px;
+            font-size: 14px;
+            padding: 2px;
+        }
+        select:hover{
+            transition: 0.2s;
+            border: 2px solid #aaa;
+        }
+        select:focus{
+            transition: 0.2s;
+            border: 2px solid #555;
+        }
+        input{
+            outline-style: none ;
+            border: 1px solid #ccc; 
+            border-radius: 3px;
+            outline: none;
+            height: 25px;
+            width: 80px;
+            margin-top: 10px;
+            font-size: 14px;
+            padding: 2px;
+        }
+        input:hover{
+            transition: 0.2s;
+            border: 2px solid #aaa;
+        }
+        input:focus{
+            transition: 0.5s;
+            border: 2px solid #555;
+        }
+        input[type=number]::-webkit-outer-spin-button,
+        input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
     </style>
+    <script>
+        function calculate(){
+            var formElement = document.getElementById('form');
+            var gender = formElement[0].value;
+            var activity = formElement[1].value;
+            var age = formElement[2].value;
+            var height = formElement[3].value;
+            var weight = formElement[4].value;
+            var BMR, TDEE;
+            if(gender=='male') BMR = (13.7*weight)+(5.0*height)-(6.8*age)+66;
+            if(gender=='female') BMR = (9.6*weight)+(1.8*height)-(4.7*age)+655;
+            TDEE = Math.round(BMR*activity);
+            BMR = Math.round(BMR);
+            document.getElementById("TDEE").innerHTML = 
+            "您的BMR為 "+BMR+"<br>"+
+            "您的TDEE為 "+TDEE+"<br>"+
+            "您一天所需熱量介於"+BMR+" ~ "+TDEE+" 大卡之間";
+
+        }
+    </script>
 </head>
 <body>
     <h1>我一天需要多少熱量？</h1>
     <hr>
-    <p>根據每日活動量及為了調整體重至健康體重，可計算每日建議攝取熱量<br><br></p>
-    <table>
-        <tr>
-          <th>每天活動量</th>
-          <th>體重過輕者所需熱量</th>
-          <th>體重正常者所需熱量</th>
-          <th>體重過重、肥胖者所需熱量</th>
-        </tr>
-        <tr>
-          <td>輕度工作</td>
-          <td>35大卡 X 目前體重（公斤）</td>
-          <td>30大卡 X 目前體重（公斤）</td>
-          <td>20~25大卡 X 目前體重（公斤）</td>
-        </tr>
-        <tr>
-          <td>中度工作</td>
-          <td>40大卡 X 目前體重（公斤）</td>
-          <td>35大卡 X 目前體重（公斤）</td>
-          <td>30大卡 X 目前體重（公斤）</td>
-        </tr>
-        <tr>
-          <td>重度工作</td>
-          <td>45大卡 X 目前體重（公斤）</td>
-          <td>40大卡 X 目前體重（公斤）</td>
-          <td>35大卡 X 目前體重（公斤）</td>
-        </tr>
-      </table>
+    <p>基礎代謝BMR(Basal Metabolic Rate)：<br>
+        <p class="content">BMR就像是你走進一間餐廳的低消，當一個沙發馬鈴薯躺著一整天，
+        身體需要的最低熱量，用來呼吸、新陳代謝、生存使用的，等於就是你躺著一天不動都會消耗的熱量就是BMR。</p>
+    </p>
     
-
-    <br><br><hr>
-    <p>活動量表說明<br><br></p>
-
+    <p>身體每日所能消耗的熱量TDEE(Total Daily Energy Expenditure)：<br>
+        <p class="content">TDEE是最後的結帳金額，會依據你每天活動量、吃的食物計算出來的數字就不一樣，
+            簡單廣義理解:BMR加上你的活動量，就可以理解為TDEE。每一個人都是獨一無二的，
+            走進的餐廳不同，點的餐也不一樣，所以BMR和TDEE都不一樣喔！</p>
+    </p>
+    <hr><p>活動量表說明：</p>
     <table>
         <tr>
           <th>每天活動量</th>
-          <th>活動種類</th>
+          <th>活動量描述</th>
         </tr>
         <tr>
-          <td>輕度工作</td>
-          <td>大部分從事靜態或坐著的工作。
-            例如：家庭主婦、坐辦公室的上班族、售貨員等...</td>
+          <td>無活動</td>
+          <td>久坐</td>
         </tr>
         <tr>
-          <td>中度工作</td>
-          <td>從事機械操作、接待或家事等站立活動較多的工作。
-            例如：褓母、護士、服務生等...</td>
+          <td>輕量活動</td>
+          <td>每周運動1-3天(輕鬆)</td>
         </tr>
         <tr>
-          <td>重度工作</td>
-          <td>從事農耕、漁業、建築等的重度使用體力之工作。
-            例如：運動員、搬家工人等...</td>
+          <td>中度活動量</td>
+          <td>站走稍多、每周運動3-5天(中強度)</td>
+        </tr>
+        <tr>
+          <td>高度活動量</td>
+          <td>站走為主、每周運動6-7天(高強度)</td>
+        </tr>
+        <tr>
+          <td>非常高度活動量</td>
+          <td>無時無刻都在運動，幾乎整天都做高強度的運動，像是建築工人等勞力型的工作</td>
         </tr>
       </table>
 
       <br><br><hr>
-      <p>計算一日所需熱量<br><br></p>
-      <form action="">
-        性別:
-        <input type="text" name="firstname">
-        年齡:
-        <input type="text" name="lastname">
-        身高:
-        <input type="text" name="lastname">
-        體重:
-        <input type="text" name="lastname">
-        <input type="submit" value="提交">
+      <p>計算一日所需熱量</p>
+
+      
+      <form id="form" action="javascript:;" onsubmit="calculate()">
+
+        <label for="gender">性別：</label>
+        <select name="gender" required>
+            <option value="">請選擇性別</option>
+            <option value="male">男生</option>
+            <option value="female">女生</option>
+        </select>
+
+        <label for="activity" style="margin-left: 20px;">日常活動量：</label>
+        <select name="activity" required>
+            <option value="">請選擇活動量</option>
+            <option value=1.2>無活動</option>
+            <option value=1.375>輕量活動</option>
+            <option value=1.55>中度活動量</option>
+            <option value=1.725>高度活動量</option>
+            <option value=1.9>非常高度活動量</option>
+        </select>
+        <br>
+        <label for="age">年齡：</label>
+        <input type="number" name="age" min="0" max="100" required>
+        <br>
+        <label for="height">身高：</label>
+        <input type="number" name="height" min="0" max="900" required>
+        <br>
+        <label for="weight">體重：</label>
+        <input type="number" name="weight" min="0" max="900" required>
+
+        <input type="submit" value="提交" style="margin-left: 15px; height: 28px; width: 100px;">
         </form>
+        <br>
+        <p id="TDEE"></p>
+        
 </body>
 </html>
 
