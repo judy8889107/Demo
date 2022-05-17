@@ -5,21 +5,52 @@
     <title>關於機器人</title>
     <!-- 樣式 -->
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
         body{
+            padding: 20px;
             height: 800px;
+            font-family: 'Noto Sans TC', sans-serif;
             animation: fadein 1s; /*網頁淡入*/
+           
         }
 		@keyframes fadein {
             from { opacity: 0; }
             to { opacity: 1; }
         }
 
+        h1{
+            color: #b74242;
+            font-weight: bold;
+        }
+
+        h2{
+            font-weight: bold;
+            color: #252525;
+        }
+        ul,p{
+            color: #393939;
+        }
         
     </style>
 </head>
 <body>
-    <h1>關於機器人</h1>
-    
-    
+    <h1>關於熱量聊天機器人</h1>
+    <hr>
+    <h2>關於機器人</h2>
+    <p>嗨您好!<br>偶是熱量機器人，平常偶什麼都不會，但最愛說話! 偶什麼都沒有但口水最多! 歡迎常常來跟邊緣的偶聊天喔! 拜託啦~QQQ</p>
+    <p><b>偶的名子 : </b>愛供偎<br><b>偶的性別 : </b>偶也不清楚<br><b>偶的身高 : </b>10cm<br><b>偶的體重 : </b>999kg<br><b>偶的口水重 : </b>998kg<br><b>line ID : </b>123456789</p>
+    <hr>
+    <h2>可以跟聊天機器人聊什麼?</h2>
+    <ul>
+        <li>可以詢問食物熱量</li>
+        <li>可以跟偶講笑話</li>
+        <li>可以問偶早午晚餐要吃什麼</li>
+        <li>可以跟偶聊任何的事喔!</li>
+    </ul>
+    <hr>
+    <h2>如何製造機器人</h2>
+    <p>偶們是利用composer做class dependency並使用BotMan Library的熱量機器人喔!</p>
+    <P><b>composer是什麼?</b> <br>Composer是一個依賴管理工具，它允許你在專案中宣告所有依賴的程式碼庫，並且通過簡單的命令安裝它們。通常這些依賴庫會安裝在一個叫”vendor”的目錄。<br>主要用於: 1.管理包依賴  2.管理版本  3.實現自動載入  4.支援事件處理</P>
+    <P><b>Botman是什麼?</b><br>BotMan是一個PHP聊天機器人框架，可以讓我們製作Facebook Messenger聊天機器人。也可以在不同消息平台製作機器人，例如：Slack，Telegram，Nexmo，HipChat，Facebook Messenger以及微信等等。</P>
 </body>
 </html>
