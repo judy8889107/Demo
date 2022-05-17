@@ -47,28 +47,32 @@ $botman->hears('(今天|明天|後天|.*).*星期.*(?!天氣)', function (BotMan
 	$index = date('w');
 	
 	
-	if($day == '明天'|$day == '後天'){
+	if($day == '今天'|$day == '明天'|$day == '後天'){
 		if($day == '明天') $index += 1;
 		if($day == '後天') $index += 2;
 		$bot->reply($day.'是'.$weekarray[($index)%7]);
 	}
 	else $bot->reply('不要問那麼多&#128545');
-	
-	
-	
     
 });
 
 //ReplyClass
 $botman->hears('.*說?講?笑話.*', 'Joke@RandomJoke'); //可以引用外部的(class@functionName)
+$botman->hears('(.*熱量.*)', 'CalorieDB@FindDB'); //可以引用外部的(class@functionName)
 
-//caloriedb匹配
+
+
+
+
+
+
 
 
 
 
 // Start listening
 $botman->listen();
+
 
 
 
