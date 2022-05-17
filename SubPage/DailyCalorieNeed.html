@@ -10,7 +10,13 @@
             padding: 20px;
             font-family: 'Noto Sans TC', sans-serif;
             height: 1000px;
+            animation: fadein 1s;
         }
+        @keyframes fadein {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         h1{
             color: #b74242;
             font-weight: bold;
@@ -114,9 +120,14 @@
             "您一天所需熱量介於"+BMR+" ~ "+TDEE+" 大卡之間";
 
         }
+        
+        function load(){
+            
+            
+        }
     </script>
 </head>
-<body>
+<body onload="load()">
     <h1>我一天需要多少熱量？</h1>
     <hr>
     <p>基礎代謝BMR(Basal Metabolic Rate)：
