@@ -19,7 +19,7 @@ class CalorieDB{
             //判斷使用者打的string
             // 匹配 查詢熱量|熱量查詢
             if(preg_match("(.*查詢.*)", $str)){
-                $bot->reply("請輸入要查詢的資料<br>(ex:玉米的熱量 or 玉米熱量)");
+                $bot->reply("請輸入要查詢的資料&#128269;<br>(ex:玉米的熱量 or 玉米熱量&#127805;)");
             }
             //匹配 含有熱量關鍵字
             else{
@@ -43,7 +43,9 @@ class CalorieDB{
                 }
                 //若找不到熱量，則提示關鍵字
                 if(!isset($reply)){
-                    $reply = "找不到此項資料&#128534;，試試看這些關鍵字(?<br>";
+                    $reply = "找不到此項資料&#128534;";
+                    if(sizeof($tmparr)!=0) $reply = $reply."<br>試試看這些關鍵字&#128269;<br><br>";
+                    else $reply = $reply."<br>我們會努力優化資料庫的&#128170;!!";
                     for($i=0;$i<sizeof($tmparr);$i++){
                         $reply = $reply.$tmparr[$i];
                         if($i<sizeof($tmparr)-1)
