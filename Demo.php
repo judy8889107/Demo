@@ -40,7 +40,7 @@ emoji使用：將emoji轉換成dex即可顯示
 
 
 //ReplyClass
-$botman->hears('.*說?講?笑話.*', 'Joke@RandomJoke'); //引用外部的(class@functionName)
+$botman->hears('.*說?講?笑話.*', 'General@RandomJoke'); //引用外部的(class@functionName)
 $botman->hears('(.*熱量.*)', 'CalorieDB@FindDB'); 
 $botman->hears('.*(迷因|meme).*', 'General@Meme'); 
 $botman->hears('.*(你好|哈瞜|Hello|Hi).*', 'General@Hello'); 

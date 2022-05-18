@@ -80,6 +80,14 @@ class General{
         // 回覆圖片
         $bot->reply($message);
     }
+
+    // 隨機笑話
+    public function RandomJoke($bot) {
+		$data = file_get_contents('http://localhost/Demo/ReplyClass/Joke.txt');
+		$arr = explode(PHP_EOL, $data);
+		$index = rand(0,sizeof($arr)-1);
+        $bot->reply($arr[$index]);
+    }
 	
 	
 
