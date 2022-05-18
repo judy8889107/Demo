@@ -10,7 +10,7 @@ class Joke{
         $bot->reply($this->_array[$index]);
     }
 	
-	public $_array = array(
+	private $_array = array(
 	"老師：小明，麻煩你過來一下<br>從此小明就變成了<br><br>過來人",
 	"從前從前有一個人叫小明<br>但是小明沒聽到",
 	"栗子掉到地上會變成什麼？<br>血淋淋的栗子",

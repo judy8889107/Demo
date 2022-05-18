@@ -1,8 +1,21 @@
 <?php
 
+use BotMan\BotMan\Messages\Attachments\Image;
+use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
+
 // 一般聊天回應
 
 class General{
+
+    //總共50張迷因
+    private $memeImgTotal = 50; 
+
+    //機器人資訊
+    private $botName = "愛供偎&#128588;";
+    private $botAge = "年齡是秘密&#129323;";
+    private $botGender = "我也不清楚&#129300;";
+    private $botHeight = "10cm&#128546;";
+    private $botWeight = "999kg&#129322;";
 	
 
 	//日期回應
@@ -41,8 +54,31 @@ class General{
     }
 
     //打招呼回應
-	public function Hello($bot) {
-        $bot->reply('你好啊&#128588;');
+	public function Hello($bot, $str) {
+        $str = ucfirst($str);
+        $bot->reply($str.$str.'&#128516;&#128588;');
+    }
+
+    //機器人資訊
+	public function RobotInfo($bot) {
+        $reply = sprintf("我是 %s<br>年齡：%s<br>性別：%s<br>身高：%s<br>體重：%s",
+        $this->botName, $this->botAge, $this->botGender, $this->botHeight, $this->botWeight);
+        $bot->reply($reply);
+    }
+
+    //迷因 回傳
+    public function Meme($bot){
+        // 需要將FilePath轉換成URL
+        $random = rand(1,$this->memeImgTotal);
+        $path = sprintf('http://localhost/Demo/ReplyClass/Meme/img%d.jpg', $random);
+        $attachment = new Image($path, [
+            'custom_payload' => true,
+        ]);
+        $message = OutgoingMessage::create('')
+                    ->withAttachment($attachment);
+
+        // 回覆圖片
+        $bot->reply($message);
     }
 	
 	
