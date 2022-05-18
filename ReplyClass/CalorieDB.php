@@ -30,18 +30,20 @@ class CalorieDB{
 
                 $tmparr = array();
                 while($row = mysqli_fetch_row($result)){
+                    //將樣品名稱及俗名存成array型態
                     $arr = explode(",", $row[1]);
                     array_unshift($arr, $row[0]);
-
+                    
+                    //找出包含 玉米(範例)的所有字串，並存成array，當找不到該項物品，可以給使用者HintWord
                     $tmparr = array_merge(preg_grep("/$str/", $arr),$tmparr);
-
+                    //若找到字串完全符合玉米
                     if(in_array($str,$arr)){
                         $reply = $row[2];
                         $catogory = $row[3];
                         break;
                     }
                 }
-                //若找不到熱量，則提示關鍵字
+                //若找不到資料，則提示使用者使用其他關鍵字
                 if(!isset($reply)){
                     $reply = "找不到此項資料&#128534;";
                     if(sizeof($tmparr)!=0) $reply = $reply."<br>試試看這些關鍵字&#128269;<br><br>";

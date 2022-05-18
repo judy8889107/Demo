@@ -1,6 +1,6 @@
 <?php
 
-require_once 'vendor/autoload.php';
+require_once 'vendor/autoload.php'; //BotMan Library依賴
 
 //引入ReplyClass底下所有php
 foreach (glob("ReplyClass/*.php") as $filename) {
@@ -39,13 +39,13 @@ emoji使用：將emoji轉換成dex即可顯示
 */
 
 
-//ReplyClass
-$botman->hears('.*說?講?笑話.*', 'General@RandomJoke'); //引用外部的(class@functionName)
-$botman->hears('(.*熱量.*)', 'CalorieDB@FindDB'); 
-$botman->hears('.*(迷因|meme).*', 'General@Meme'); 
-$botman->hears('.*(你好|哈瞜|Hello|Hi).*', 'General@Hello'); 
-$botman->hears('.*你.*(?=名字|性別|歲|年齡|誰|是|生日).*', 'General@RobotInfo'); 
-$botman->hears('(大*前天|昨天|今天|明天|大*後天).*(是|日期|星期).*(?!天氣)', 'General@Date'); 
+//引用外部的(class@functionName)
+$botman->hears('.*說?講?笑話.*', 'General@RandomJoke'); //機器人聽到:講笑話, 說笑話, 笑話
+$botman->hears('(.*熱量.*)', 'CalorieDB@FindDB'); //機器人聽到含 熱量 關鍵字字串
+$botman->hears('.*(迷因|meme).*', 'General@Meme'); //機器人聽到含 迷因,meme 關鍵字字串
+$botman->hears('.*(你好|哈瞜|Hello|Hi).*', 'General@Hello'); //機器人打招呼
+$botman->hears('.*你.*(?=名字|性別|歲|年齡|誰|是|生日).*', 'General@RobotInfo'); //詢問機器人的資訊
+$botman->hears('(大*前天|昨天|今天|明天|大*後天).*(是|日期|星期).*(?!天氣)', 'General@Date'); //查詢日期
 
 
 

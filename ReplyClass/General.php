@@ -66,10 +66,10 @@ class General{
         $bot->reply($reply);
     }
 
-    //迷因 回傳
+    //回傳 迷因圖片
     public function Meme($bot){
         // 需要將FilePath轉換成URL
-        $random = rand(1,$this->memeImgTotal);
+        $random = rand(1,$this->memeImgTotal); //隨機選擇回傳圖片
         $path = sprintf('http://localhost/Demo/ReplyClass/Meme/img%d.jpg', $random);
         $attachment = new Image($path, [
             'custom_payload' => true,
