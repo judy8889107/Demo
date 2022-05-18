@@ -5,8 +5,9 @@
     <title>聊天小助理</title>
 	<link href="style.css" rel="stylesheet" type="text/css" />
 	<script>
+		// 設定機器人相關attribute
 	var botmanWidget = {
-		frameEndpoint: 'chatFrame.html',
+		frameEndpoint: 'chatFrame.html', // 機器人聊天室樣式html
 		chatServer: 'Demo.php',
 		title: '你的愛供偎小助理',
 		introMessage: '你好，今天有什麼可以幫你的嗎&#129299;？',
@@ -21,6 +22,7 @@
 	</script>
 	<script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
 	<script>
+		// 監聽按鈕點擊事件，切換iframe
 		document.onclick=function(){ 
 		var obj = event.srcElement; 
 		if(obj.type == "button"){

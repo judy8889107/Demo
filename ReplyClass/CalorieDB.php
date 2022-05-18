@@ -1,5 +1,6 @@
 <?php
 
+// 查詢熱量資料庫
 class CalorieDB{
 	
 	//查找資料庫

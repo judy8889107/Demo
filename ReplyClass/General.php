@@ -81,7 +81,7 @@ class General{
         $bot->reply($message);
     }
 
-    // 隨機笑話
+    // 隨機選擇笑話
     public function RandomJoke($bot) {
 		$data = file_get_contents('http://localhost/Demo/ReplyClass/Joke.txt');
 		$arr = explode(PHP_EOL, $data);
