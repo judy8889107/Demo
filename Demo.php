@@ -11,6 +11,10 @@ use BotMan\BotMan\BotMan;
 use BotMan\BotMan\BotManFactory;
 use BotMan\BotMan\Drivers\DriverManager;
 
+//設定使用的driver的configuration (因為BotMan有提供多種Driver可以選擇，這裡我們用的是Web Driver)
+//所有HTTP的請求都要將driver的attribute設為'web'
+//我覺得應該是我們從widget輸入的資料，會經過widget script .js檔案處理，回傳到Demo.php(也就是我們的ChatServer)
+//所以這裡才有HTTP請求的部分(透過HTTP請求，將參數帶入js，js產生結果回傳)
 $config = [
     'web' => [
     	'matchingData' => [
@@ -20,9 +24,10 @@ $config = [
 ];
 
 // Load the driver(s) you want to use
+//載入使用的driver的class
 DriverManager::loadDriver(\BotMan\Drivers\Web\WebDriver::class);
 
-// Create an instance
+//建立一個BotMan物件，就可以使用BotMan Library提供的函數
 $botman = BotManFactory::create($config);
 
 
