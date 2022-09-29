@@ -8,8 +8,8 @@ class CalorieDB{
 
         //連接資料庫
         $host = 'localhost';  //host
-        $dbuser ='team06';  //帳號
-        $dbpassword = 'team06'; //密碼
+        $dbuser ='root';  //帳號
+        $dbpassword = ''; //密碼
         $dbname = 'team06'; //資料庫名稱
         $link = mysqli_connect($host,$dbuser,$dbpassword,$dbname);
 
